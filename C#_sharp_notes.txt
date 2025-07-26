@@ -1,0 +1,634 @@
+C# sharp notes:
+
+
+# What it looks like :
+
+
+1.using System;
+2.
+3.namespace HelloWorld
+4.{
+5. class Program
+6.  {
+7.    static void Main(string[] args)
+8.    {
+9.      Console.WriteLine("Hello World!");    
+10.    }
+11.  }
+12.}
+
+
+Line 1: using System means that we can use classes from the System namespace.
+
+Line 2: A blank line. C# ignores white space. However, multiple lines makes the code more readable.
+
+Line 3: namespace is used to organize your code, and it is a container for classes and other namespaces.
+
+Line 4: The curly braces {} marks the beginning and the end of a block of code.
+
+Line 5: class is a container for data and methods, which brings functionality to your program. Every line of code that runs in C# must be inside a class. In our example, we named the class Program.
+Line 7: Another thing that always appear in a C# program is the Main method. Any code inside its curly brackets {} will be executed. You don't have to understand the keywords before and after Main. You will get to know them bit by bit while reading this tutorial.
+
+Line 9: Console is a class of the System namespace, which has a WriteLine() method that is used to output/print text. In our example, it will output "Hello World!".
+
+If you omit the using System line, you would have to write System.Console.WriteLine() to print/output text.
+
+Note: Every C# statement ends with a semicolon ;.
+
+Note: C# is case-sensitive; "MyClass" and "myclass" have different meaning.
+
+Note: Unlike Java, the name of the C# file does not have to match the class name, but they often do (for better organization). When saving the file, save it using a proper name and add ".cs" to the end of the filename.
+
+# To print /display output:
+->To output values or print text in C#, you can use the "Console.WriteLine()".This inserts a new linw with every output.
+->There is also a Write() method, which is similar to WriteLine().The only difference is that it does not insert a new line at the end of the output.
+-> For example:  Console.Write("Hello World! "); // we added an extra space for better readability.
+Console.Write("I will print on the same line.");
+
+
+#Commenting in C#:
+-> Single-line comments start with two forward slashes (//).
+-> Any text between // and the end of the line is ignored by C# (will not be executed).
+-> Multi-line comments start with /* and ends with */.
+-> Any text between /* and */ will be ignored by C#.
+
+
+#Variables in C# :
+-> variables are like containers/boxes where you store value that is either given by you or assigned by user.Think it like a toy box containing the toy. toy box--> variable and toy--> value.
+
+-> In C#, there are different types of variables (defined with different keywords), for example:
+ int - stores integers (whole numbers), without decimals, such as 123 or -123
+ double - stores floating point numbers, with decimals, such as 19.99 or -19.99
+ char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+ string - stores text, such as "Hello World". String values are surrounded by double quotes
+ bool - stores values with two states: true or false
+
+-> declaration: telling the program that : Hey! there exists a int type  variable x having value 2!
+   syntax:  type variableName = value;
+      --> Where type is a C# type (such as int or string), and variableName is the name of the variable (such as x or name). The equal sign is used to assign values to the variable.
+
+-> to display the value : string name = "John";
+Console.WriteLine(name);   //just put is inside write function.
+     |_--> to display along with text:To combine both text and a variable, use the + character!
+           eg: string name = "John";
+Console.WriteLine("Hello " + name);
+        --> You can also use the + character to add a variable to another variable.Like:
+string fullName = firstName + lastName;
+Console.WriteLine(fullName);
+
+-> example of types:
+int myNum = 5;
+double myDoubleNum = 5.99D;
+char myLetter = 'D';
+bool myBool = true;
+string myText = "Hello";
+
+## Making a variable constant:
+-> If you don't want others (or yourself) to overwrite existing values i.e change , you can add the "const" keyword in front of the variable type.
+-> This will declare the variable as "constant", which means unchangeable and read-only
+-> Note: You cannot declare a constant variable without assigning the value. If you do, an error will occur: A const field requires a value to be provided.
+
+## Multiple variable declaration:
+-> To declare more than one variable of the same type, use a comma-separated list.Like int x-9,y-8,z=7;
+-> You can also assign the same value to multiple variables in one line.Like int x, y, z;x = y = z = 50;
+
+## Indetifiers: nothing but naming of variables!
+-> All C# variables must be identified with unique names.
+->These unique names are called identifiers.
+->Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+
+# Number types of data:
+-> this type has 2 categories: Float and double
+-> they onle differ for decimal precision i.e float can only give upto 4 or 5 points precision ,eg: 123.12345 .While double gives upto value of 14-15 pricision after '.' , eg: 123.12345678912345.
+ariables in C# must have a specific data type, which defines the kind of data the variable holds and how much memory it uses.
+
+-> Common data types include:
+
+int (whole numbers),
+
+double (floating-point numbers),
+
+char (single character),
+
+bool (true/false),
+
+string (text).
+
+-> int stores whole numbers from -2,147,483,648 to 2,147,483,647.
+Example: int myNum = 100;
+
+->long is used for larger whole numbers beyond int range. Add L at the end.
+Example: long bigNum = 15000000000L;
+
+-> float and double store numbers with decimals.
+
+-> float → ~6–7 decimal digits, ends with F.
+
+-> double → ~15 decimal digits, ends with D.
+
+-> Prefer double over float for more precision in calculations.
+
+-> Scientific notation is supported using e.
+Example: double sci = 3.5e2; // 350
+
+-> char stores a single character in single quotes.
+Example: char letter = 'A';
+
+-> bool stores either true or false.
+Example: bool isTrue = true;
+
+-> string holds sequences of characters and uses double quotes.
+Example: string name = "Alice";
+
+
+
+
+# Data type casting: 
+->Type casting is when you assign a value of one data type to another type.
+->2 types: Implicit and explicit type casting.
+->Implicit conversions happen when the compiler is certain the conversion will be safe (no data loss).
+->Explicit conversions are required when the conversion might be unsafe (potential data loss or exceptions), and you need to explicitly tell the compiler that you're aware of the risk.
+->This also applies to user-defined types. If a conversion operator could lead to data loss or exceptions, it should be defined as explicit. 
+
+# User input : 
+-> Console.ReadLine() to get user input.
+-> string userName = Console.ReadLine();   // Create a string variable and get user input from the keyboard and store it in the variable
+-> The Console.ReadLine() method returns a string. Therefore, you cannot get information from another data type, such as int! 
+-> error you will get: Cannot implicitly convert type 'string' to 'int'
+-> you can convert any type explicitly, by using one of the Convert.To... methods.
+eg : string age ="3";
+     int iage= Convert.ToInt32(age);
+
+Experiment with it!
+
+Note: If you enter wrong input (e.g. text in a numerical input), you will get an exception/error message (like System.FormatException: 'Input string was not in a correct format.').
+
+
+# Operators:
+
+Operator Name	         Description	                      Example
++	Addition	Adds together two values	      x + y	
+-	Subtraction	Subtracts one value from another      x - y	
+*	Multiplication	Multiplies two values	              x * y	
+/	Division	Divides one value by another	      x / y	
+%	Modulus	Returns the division remainder	              x % y	
+++	Increment	Increases the value of a var by 1	x++	
+--	Decrement	Decreases the value of a var by 1	x--
+
+
+## Assignment :
+-> we use the assignment operator (=) to assign the value.
+-> The addition assignment operator (+=) adds a value to a variable.
+
+
+OP      E.G.	Same As	
+=	x = 5	x = 5	
++=	x += 3	x = x + 3	
+-=	x -= 3	x = x - 3	
+*=	x *= 3	x = x * 3	
+/=	x /= 3	x = x / 3	
+%=	x %= 3	x = x % 3	
+&=	x &= 3	x = x & 3 
+|=	x |= 3	x = x | 3	
+^=	x ^= 3	x = x ^ 3	
+>>=	x >>= 3	x = x >> 3	
+<<=	x <<= 3	x = x << 3	
+
+Note:  the & operator in C# can be either a bitwise AND operator (for integral types) or a logical AND operator (for bool operands) that always evaluates both sides	
+
+## Comparision:
+
+Op	Name	        Example	
+==	Equal to	x == y	
+!=	Not equal	x != y	
+>	Greater than	x > y	
+<	Less than	x < y	
+>=	Greater / equal x >= y	
+<=	Less or equal   x <= y
+
+## Logical :
+
+Operator	Name	Description	                                          Example	
+&& 	Logical and	Returns True if both statements are true	         x < 5 &&  x < 10	
+|| 	Logical or	Returns True if one of the statements is true	         x < 5 || x < 4	
+!	Logical not	Reverse the result, returns False if the result is true	 !(x < 5 && x < 10)
+
+
+
+# Class Methods:
+  ### Math class:
+
+Math.Abs(x)
+→ Returns the absolute value of x
+Example: Math.Abs(-5) → 5
+
+Math.Ceiling(x)
+→ Rounds x up to the nearest integer
+Example: Math.Ceiling(4.3) → 5
+
+Math.Floor(x)
+→ Rounds x down to the nearest integer
+Example: Math.Floor(4.7) → 4
+
+Math.Round(x)
+→ Rounds x to the nearest integer (or specified decimal places)
+Example: Math.Round(4.6) → 5
+
+Math.Max(a, b)
+→ Returns the larger of two numbers
+Example: Math.Max(10, 20) → 20
+
+Math.Min(a, b)
+→ Returns the smaller of two numbers
+Example: Math.Min(10, 20) → 10
+
+Math.Pow(x, y)
+→ Returns x raised to the power of y
+Example: Math.Pow(2, 3) → 8
+
+Math.Sqrt(x)
+→ Returns the square root of x
+Example: Math.Sqrt(25) → 5
+
+Math.Log(x)
+→ Returns the natural logarithm (base e) of x
+Example: Math.Log(10)
+
+Math.Log10(x)
+→ Returns the base-10 logarithm of x
+Example: Math.Log10(100) → 2
+
+Math.Sin(x), Math.Cos(x), Math.Tan(x)
+→ Trigonometric functions (input in radians)
+Example: Math.Sin(Math.PI / 2) → 1
+
+Math.PI, Math.E
+→ Constants: π (3.14159...) and Euler’s number (2.718...)
+
+
+
+# String data tye:
+-> Strings are used to store text data in C#.
+
+-> A string is defined using double quotes (" ").
+Example: string greeting = "Hello";
+
+-> A string can contain multiple words.
+Example: string message = "Nice to meet you!";
+
+-> In C#, a string is actually an object, not just a value.
+
+-> The Length property returns the number of characters in the string.
+Example: string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      Console.WriteLine("The length of the txt string is: " + txt.Length);  //The length of the txt string is: 26
+
+
+{if you want to use any property or method in c# you alway apply it using '.'.....like txt.Lenght , txt.ToUpper()...}
+
+-> Common string methods:
+
+    ---->ToUpper() → Converts the string to uppercase
+
+    ---->ToLower() → Converts the string to lowercase
+
+-> Example:
+   string txt = "Hello World";
+   Console.WriteLine(txt.ToUpper()); // "HELLO WORLD"
+   Console.WriteLine(txt.ToLower()); // "hello world"
+
+## To combine strings:
+-> The + operator can be used between strings to combine them. This is called concatenation. eg. : name= firstname+lastname;
+-> You can also use the string.Concat() method to concatenate two strings. eg. : name= string.Concat(firstName, lastName);
+
+{WARNING! C# uses the + operator for both addition and concatenation.Remember: Numbers are added. Strings are concatenated.}
+
+->Another option of string concatenation, is string interpolation, which substitutes values of variables into placeholders in a string. Note that you do not have to worry about spaces, like with concatenation.
+
+-> alway use '$' before starting the interpolation!
+  example:
+string firstName = "John";
+string lastName = "Doe";
+string name = $"My full name is: {firstName} {lastName}";
+Console.WriteLine(name);
+
+## Access strings:
+->You can access the characters in a string by referring to its index number inside square brackets [].
+eg.: string animal="dog";
+Console.WriteLine(animal[0]);  //output: d
+->You can also find the index position of a specific character in a string, by using the IndexOf() method.
+  example:
+string myString = "Hello";
+Console.WriteLine(myString.IndexOf("e"));  // Outputs "1"
+
+{!!!! Remeber idexing starts with 0 ...it goes like 0,1,2,3,4,.....!!!}
+
+->Another useful method is Substring(), which extracts the characters from a string, starting from the specified character position/index, and returns a new string. This method is often used together with IndexOf() to get the specific character position.
+
+## Special charachters in between the strings:
+
+-> Because strings must be written within quotes, C# will misunderstand using some special characters in between:
+eg : string aboutjohn= "he is the so called "hunk" of the class"; //hunk will throw error.
+
+-> The solution to avoid this problem, is to use the backslash escape character.
+-> The backslash (\) escape character turns special characters into string characters:
+
+Escape character	Result	Description
+\'	                 '	Single quote
+\"	                 "	Double quote
+\\	                 \	Backslash
+
+
+Other useful escape characters in C# are:
+
+Code	Result	
+\n	New Line	
+\t	Tab	
+\b	Backspace	
+
+
+#booleans:
+->C# has a bool data type, which can take the values true or false.
+
+# Conditonal coding:
+->C# has the following conditional statements:
+Use--> if :to specify a block of code to be executed, if a specified condition is true
+Use--> else :to specify a block of code to be executed, if the same condition is false
+Use--> else :if to specify a new condition to test, if the first condition is false
+Use--> switch :to specify many alternative blocks of code to be executed
+
+->If...else :
+
+syntax: if (condition1){//block} else {//block }
+
+-> Short Hand If...Else (Ternary Operator):There is also a short-hand if else, which is known as the ternary operator because it consists of three operands. It can be used to replace multiple lines of code with a single line. It is often used to replace simple if else statement.
+
+Syntax : variable = (condition) ? expressionTrue :  expressionFalse;
+
+-> Switch -case :
+The switch expression is evaluated once
+The value of the expression is compared with the values of each case
+If there is a match, the associated block of code is executed
+The break and default keywords will be described later in this chapter
+
+syntax:
+switch(expression) 
+{
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;          //breaks when condition if fullfilled
+  default:         // default in case none of the cases match 
+    // code block
+    break;
+}
+
+# LOOPS: executing a code block for multiple runs
+-> while loop : loops if the condition is fulfilled and runs till it fails the condition depeneding upon the given modificatio such as increment  or decrement...
+
+syntax: 
+while (condition)
+{//block executes}   //will skip if condition not fulfilled.
+
+-> do-while loop: do/while loop runs the code at least once, then checks the condition.
+If the condition is true, it repeats; otherwise, it stops.
+-> Think of it as:"Do first, check later."
+
+->foor loop :When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop.
+syntax : 
+for (statement 1; statement 2; statement 3) 
+{
+  // code block to be executed
+}
+--->Statement 1 is executed (one time) before the execution of the code block.
+
+--->Statement 2 defines the condition for executing the code block.
+
+--->Statement 3 is executed (every time) after the code block has been executed.
+
+->The foreach Loop:There is also a foreach loop, which is used exclusively to loop through elements in an array (or other data sets).
+
+syntax :
+foreach (type variableName in arrayName) 
+{
+  // code block to be executed
+}
+
+
+# Break & Continue:
+->break: Exits the loop immediately.
+->continue: Skips the current iteration and moves to the next one.
+
+
+# Arrays in c#:
+-> Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+-> mind it they are for the specified data type only!
+-> To declare an array, define the variable type with square brackets:data_type [] var_name;
+-> To insert values to it, we can use an array literal - place the values in a comma-separated list, inside curly braces
+ Example: data_type [] var_name = {v1,v2,v3,v4.....};
+ Sample:  
+  int[] intvalue = { 1, 2, 3, 4, 5 }; //array of integer values 
+ //it goes something like this: 0th index has 1, 1st index has 2, 2nd index has 3, 3rd index has 4, and 4th index has 5
+ //total 5 elements in the array
+ for (int k=0;k<5;k++)  //so in array of 5 elements, the index starts from 0 and goes to 4
+ {
+     Console.WriteLine(intvalue[k]); //printing each car name from the array
+ }
+
+Note: Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
+
+## Accessing array :
+
+->You access an array element by referring to the index number.(refer the above code ; see intvalue[k] - k --->index)
+int [] val={1,    2,   3,   4,  5};
+            |     |    |    |   |
+            0th   1st  2nd 3rd  4th...so val[0]--> 1 , val[1]-->2 ...
+
+-> To find out how many elements an array has, use the Length property. eg, : string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+Console.WriteLine(cars.Length);
+// Outputs 4 how ? 0th -> "volvo" , 1st->"BMW" , 2nd->Ford and 3rd->Mazda ----total 4!
+
+-> some other ways to create arrays : 
+// Create an array of four elements, and add values later
+string[] cars = new string[4];
+
+// Create an array of four elements and add values right away 
+string[] cars = new string[4] {"Volvo", "BMW", "Ford", "Mazda"};
+
+// Create an array of four elements without specifying the size 
+string[] cars = new string[] {"Volvo", "BMW", "Ford", "Mazda"};
+NOTE: you should note that if you declare an array and initialize it later, you HAVE to use the new keyword!
+eg. : // Declare an array
+string[] cars;
+
+// Add values, using new
+cars = new string[] {"Volvo", "BMW", "Ford"};
+
+// Add values without using new (this will cause an error)
+cars = {"Volvo", "BMW", "Ford"};
+
+## LOOPING through the Array :
+-> You can loop through the array elements with the for loop, and use the Length property to specify how many times the loop should run.
+   Example : 
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+for (int i = 0; i < cars.Length; i++) 
+{
+  Console.WriteLine(cars[i]);
+}
+
+
+->There is also a foreach loop, which is used exclusively to loop through elements in an array:
+
+Syntax
+foreach (type variableName in arrayName) 
+{
+  // code block to be executed
+}
+
+Eg. : 
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+foreach (string i in cars)    //for each string element (called i - as in index) in cars
+{
+  Console.WriteLine(i);  //print out the value of i
+}
+
+
+NOTE: If you compare the for loop and foreach loop, you will see that the foreach method is easier to write, it does not require a counter (using the Length property), and it is more readable.
+
+
+******* try with double or float type !
+you will end up getting error ! why!? Well ,because array type can be flat type but not the indices!! you can't have ar[0.5] or ar[5.6] or ar[1.5]!!!!
+indices are always integers- whole numbers  !******************
+
+->Other useful array methods, such as Min, Max, and Sum, can be found in the System.Linq namespace.
+
+# MULTIDIMENTIONAL ARRAYS: VERY IMPORTANT!!!
+-> Till now we learnt about single dimentional arrays.
+->However, if you want to store data as a tabular form, like a table with rows and columns, you need to get familiar with multidimensional arrays.
+-> A multidimensional array is basically an array of arrays.
+-> Arrays can have any number of dimensions. The most common are two-dimensional arrays (2D).
+
+Syntax: data_type [,] var_name; [,]---->[index A1, index B1] ---> A1 for rows and B1 for columns.Similarly we can create 3D,4D...many!
+        data_type [,,] var_name;-->3 D
+-> To create a 2D array, add each array within its own set of curly braces, and insert a comma (,) inside the square brackets.
+Example: int[,] numbers = { {1, 4, 2}, {3, 6, 8} };
+
+numbers is now an array with two arrays as its elements. The first array element contains three elements: 1, 4 and 2, while the second array element contains 3, 6 and 8. To visualize it, think of the array as a table with rows and columns:
+
+                  column0 column1 column2
+            row0    1      4        2
+            row1    3      6        8
+
+## ACCESSING MULTIDIMENTIONAL ARRAY:
+->To access an element of a two-dimensional array, you must specify two indexes: one for the array, and one for the element inside that array. Or better yet, with the table visualization in mind; one for the row and one for the column (see example below).
+  Example
+int[,] numbers = { {1, 4, 2}, {3, 6, 8} };
+Console.WriteLine(numbers[0, 2]);  // Outputs 2 //This statement accesses the value of the element in the first row (0) and third column (2) of the numbers array
+
+## Change Elements of a 2D Array :
+->You can also change the value of an element.
+->Chnages can be done by specifying the positions in a multidimensional array.
+The following example will change the value of the element in the first row (0) and first column (0):
+
+Example
+int[,] numbers = { {1, 4, 2}, {3, 6, 8} };
+numbers[0, 0] = 5;  // Change value to 5 of 0th row's 0th column i.e. 1
+Console.WriteLine(numbers[0, 0]); // Outputs 5 instead of 1
+
+## Looping in multi-D array :
+
+Example:
+int[,] numbers = { {1, 4, 2}, {3, 6, 8} };
+
+foreach (int i in numbers)
+{
+  Console.WriteLine(i);
+}
+
+-->When you use a foreach loop on a multidimensional array like int[,], you are not dealing with row and column indices directly.
+
+-->Instead, foreach just sees a sequence of elements in row-major order, and internally goes through each element in the array from left to right, top to bottom.
+
+-->It loops internally like this:
+
+Start at [0,0] → 1
+
+Then [0,1] → 4
+
+Then [0,2] → 2
+
+Then [1,0] → 3
+
+Then [1,1] → 6
+
+Then [1,2] → 8
+
+->Summary:
+ - foreach doesn’t need to know row and column explicitly.
+ - It uses internal logic to go through all elements in order, one by one.
+ - If you need to know the row and column indexes, then use a for loop instead.
+
+-> for loop:
+for(int row=0;row<arr.GetLength(0);row++)
+{
+    for (int clm=0;clm<arr.GetLength(1);clm++)
+    {
+        Console.WriteLine(arr[row, clm]);
+    }
+
+
+}
+Note: Also note that we have to use GetLength() instead of Length to specify how many times the loop should run.
+
+
+
+
+# Methods :             
+
+-> A method is a block of code which only runs when it is called. A.K.A Function!!!
+->It may or may not return a value.
+->You can pass data, known as parameters, into a method.
+->Why use methods? To reuse code: define the code once, and use it many times.
+->A method is defined with the name of the method, followed by parentheses (). 
+->C# provides some pre-defined methods, which you already are familiar with, such as Main(), but you can also create your own methods to perform certain action.
+
+
+Note: In C#, it is good practice to start with an uppercase letter when naming methods, as it makes the code easier to read.
+
+## Call a Method:
+-> To call (execute) a method, write the method's name followed by two parentheses () and a semicolon;.
+-every method declaration in C# must have:
+    -Access modifier (optional but common)
+         Example: public, private
+    -Return type (required)
+    -If the method returns a value → Specify the type (e.g., int, string)
+    -If it returns nothing → Use void
+    -Method name (required)
+    -Followed by parentheses ()
+    -Parameters (optional) go inside the parentheses
+    -Method body (required)
+    Code block { } that defines what the method does
+-> Syntax :  Access_modifier(privet,public,protrected) state(static /non-static) return_type Method_name( no params /parameters);
+   eg.: private static void Mymethod();
+-> method call : method_name(); //just this !
+
+
+#Parameters and Arguments:
+-> Information can be passed to methods as parameter. Parameters act as variables inside the method.
+-> They are specified after the method name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma.
+-> example: 
+static void MyMethod(string fname) 
+{
+  Console.WriteLine(fname + " Refsnes");
+}
+static void Main(string[] args)
+{
+  MyMethod("Liam");   
+  MyMethod("Jenny");
+  MyMethod("Anja");
+}
+//When a parameter is passed to the method, it is called an argument. So, from the example above: fname is a parameter, while Liam, Jenny and Anja are arguments.
+
+
+
