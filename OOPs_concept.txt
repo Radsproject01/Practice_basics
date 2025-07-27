@@ -1,0 +1,173 @@
+# OOP : Object Oriented Programming
+🎯 What is OOP?
+OOP = A way of writing code like real-life things.
+Imagine you're creating blueprints (classes) and building objects (real things) out of them.
+
+Think:
+🏠 Class = Blueprint of a House
+🏡 Object = Actual House built from that blueprint  
+whith the same blueprint you can create many houses ...like a row house in a gated society , notced how they have same structure? used same bluprint for all the houses in that row!
+
+🧱 4 Pillars of OOP
+These are the four main ideas behind OOP:
+
+#	Pillar	                What it means	                       Think like this...
+1	Encapsulation	Keep things together and safe	      A phone hides all complex circuits inside, only buttons are shown
+2	Abstraction	Show only the important stuff	      You drive a car without needing to know how the engine works
+3	Inheritance	Reuse from a parent	              A child inherits traits from parents (like eye color, etc.)
+4	Polymorphism	Same thing, many forms                A remote has one button for many TVs (same action, different result)
+
+
+
+🔧 Let's Break It Down with C# Code: 
+1️⃣ Class and Object (Basics)
+
+class Car  // Class = Blueprint
+{
+    public string color;
+    public void Drive()
+    {
+        Console.WriteLine("Vroom Vroom!");
+    }
+}
+
+Car myCar = new Car();  // Object = Real thing
+myCar.color = "Red";
+myCar.Drive();  // Output: Vroom Vroom!
+
+
+2️⃣ Encapsulation (Keeping things safe)
+
+class BankAccount
+{
+    private double balance = 0;  // Can't access directly from outside
+
+    public void Deposit(double amount)
+    {
+        if (amount > 0)
+            balance += amount;
+    }
+
+    public double GetBalance()
+    {
+        return balance;
+    }
+}
+
+// Usage
+BankAccount acc = new BankAccount();
+acc.Deposit(1000);
+Console.WriteLine(acc.GetBalance());  // Safe access
+🔒 private hides the data, public allows safe access.
+
+
+3️⃣ Inheritance (Reuse the code)
+
+class Animal
+{
+    public void Eat() => Console.WriteLine("Eating...");
+}
+
+class Dog : Animal  // Dog inherits Animal
+{
+    public void Bark() => Console.WriteLine("Barking...");
+}
+
+// Usage
+Dog myDog = new Dog();
+myDog.Eat();  // Inherited
+myDog.Bark();
+🧬 Dog gets everything Animal has, plus more.
+
+
+4️⃣ Polymorphism (One name, different forms)  : Method Overriding (Different behavior in child)
+
+class Animal
+{
+    public virtual void Sound() => Console.WriteLine("Some sound");
+}
+
+class Cat : Animal
+{
+    public override void Sound() => Console.WriteLine("Meow");
+}
+
+// Usage
+Animal a = new Cat();
+a.Sound();  // Output: Meow
+Method Overloading (Same method name, different parameters)
+csharp
+Copy
+Edit
+class Calculator
+{
+    public int Add(int a, int b) => a + b;
+    public double Add(double a, double b) => a + b;
+}
+🧠 "Poly" means many. "Morph" means form = Same name, different behavior.
+
+✅ Polymorphism is mostly about methods, not classes.
+It’s about how methods behave differently depending on context — even when they share the same name.
+
+So in C#:
+
+🔁 You can reuse the same method name...
+
+⚙️ But change how it works depending on the object or parameters.
+
+
+🔄 Two Types of Polymorphism in C#
+Type	                              Description	                          Keyword Used	            Also Called
+Compile-time	Same method name, different parameters	                        Method Overloading	Static polymorphism
+Run-time	Same method name in parent & child, but child overrides it	virtual, override	Dynamic polymorphism
+
+Ques. So Encapsulation is class related , abstraction is class related , inheritance is class realted but Polymorphism is method realted?
+
+✔ Encapsulation – Yes, it's class-related
+-> It's about keeping data inside a class and hiding internal details.
+-> Uses private, public, protected to control access.
+-> Example: A class hiding its variables and exposing methods to interact with them.
+
+✔ Abstraction – Yes, it's class-related
+-> It's about hiding complex details and showing only what's necessary.
+-> Achieved via abstract classes or interfaces.
+-> Focuses on what an object does, not how it does it.
+
+✔ Inheritance – Yes, it's class-related
+-> A child class inherits fields and methods from a parent class.
+-> Enables code reuse and hierarchy.
+
+🔄 Polymorphism – ✅ It's mostly method-related, but tied to class structure
+Why method-related?
+Because it’s about how methods behave differently (same name, different forms).
+
+Why not only method-related?
+Because to get runtime polymorphism, you need a class hierarchy:
+
+-> A base class with a virtual method
+-> A derived class with an override method
+-> A parent-type reference pointing to a child object
+
+So, polymorphism involves both:
+
+Aspect	                                      Involves
+Compile-time polymorphism (overloading)	  Just methods
+Run-time polymorphism (overriding)	  Methods + class inheritance
+
+
+
+
+
+
+
+
+💡 Extra Terms (Need-to-know)
+Term	            Meaning	                         Example
+public	           Anyone can access	                Used for common methods
+private	           Only inside the class	        Keeps stuff hidden
+protected	   Like private but children can use	Used in inheritance
+virtual	           Can be overridden in child class	Used in parent
+override	   Changes base class method in child	Used in child
+new	           Hides base class method	        Not the same as override
+
+
