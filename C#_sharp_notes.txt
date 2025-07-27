@@ -629,6 +629,28 @@ static void Main(string[] args)
   MyMethod("Anja");
 }
 //When a parameter is passed to the method, it is called an argument. So, from the example above: fname is a parameter, while Liam, Jenny and Anja are arguments.
+-> You can have as many parameters as you like, just separate them with commas. Eg: static void iwillprint(int myage, int mycntct);//this is declaration of the method , not necesssarily will it need a body , we can always define it later.
 
+Note that when you are working with multiple parameters, the method call must have the same number of arguments as there are parameters, and the arguments must be passed in the same order.
 
+##Default Parameter Value
+-> You can also use a default parameter value, by using the equals sign (=).
+-> Syntax : static void iwillprint(int mynum=087573453454);//assigninh it right here.
+-> not necessary that the value reamains same, we can alway change the value during call time.
+-> A parameter with a default value, is often known as an "optional parameter".
+
+## returning a value in a method:
+-> we can also return a value in a method/function if the function is declared witha return type.
+-> it can be static int/string/double....iwillprint(int myage){return 5+myage;}...anythign elxe than void will need to be returned!
+
+##Named Arguments:
+-> It is also possible to send arguments with the key: value syntax.
+
+##Method Overloading : Methods having the same name but different types.
+-> it's not a strict rule that overloaded methods must perform the exact same action, but it's a very strong best practice and a crucial guideline for writing understandable and maintainable code.
+-> Instead of defining two methods that should do the same thing, it is better to overload one.
+-> example: 
+int MyMethod(int x)
+float MyMethod(float x)
+double MyMethod(double x, double y)
 

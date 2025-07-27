@@ -10,6 +10,7 @@ namespace ConsoleApp1
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {  //this is a comment
             int x = 20;         //variable of int type declared and given value 20
@@ -24,10 +25,10 @@ namespace ConsoleApp1
             string lastname = "Doe"; //another string variable
             string fullname = name + " " + lastname; //concatenating two strings
             Console.WriteLine("Full name: " + fullname); //output the full name
-            
-            string strone= "Hello"; //string variable
+
+            string strone = "Hello"; //string variable
             string strtwo = "World"; //another string variable
-            string strthree=String.Concat(strone, " ", strtwo); //concatenating two strings with a space in between
+            string strthree = String.Concat(strone, " ", strtwo); //concatenating two strings with a space in between
             Console.WriteLine(strthree); //output the concatenated string
             string strfour = $"{strone} {strtwo}"; //using string interpolation to concatenate strings
 
@@ -48,20 +49,20 @@ namespace ConsoleApp1
             string sentence = "Welcome to C# programming";
             int startfrom = sentence.IndexOf("C#"); //find the index of the character 't' in the string
             Console.WriteLine("Index of 'C#': " + startfrom); //output the index of the character 't' in the string
-            string substr= sentence.Substring(startfrom); //extract a substring starting from the index of 'C#'
+            string substr = sentence.Substring(startfrom); //extract a substring starting from the index of 'C#'
             Console.WriteLine("Substring from 'C#': " + substr); //output the substring
 
-           // string aboutjohn = "He is the so called "hunk" of the class"; //this will cause a compile error due to the use of double quotes inside a string
-           // Console.WriteLine(aboutjohn); //error: Unterminated string literal
+            // string aboutjohn = "He is the so called "hunk" of the class"; //this will cause a compile error due to the use of double quotes inside a string
+            // Console.WriteLine(aboutjohn); //error: Unterminated string literal
             string aboutjohnfixed = "He is the so called \"hunk\" of the class"; //fixing the error by escaping the double quotes
-            string saysth ="it\'s a beautiful day"; //using single quotes to avoid escaping double quotes
+            string saysth = "it\'s a beautiful day"; //using single quotes to avoid escaping double quotes
             Console.WriteLine(saysth); //output the string with single quotes
             string txt = "The character \\ is called backslash.";
             Console.WriteLine(txt); //output the string with backslash
             string escpstr = "there were lots of errors\ni fixed them! ";
             Console.WriteLine(escpstr); //output the string with escape characters
 
-            while(x<23) //a simple while loop
+            while (x < 23) //a simple while loop
             {
                 Console.WriteLine("x is less than 23, current value of x: " + x);
                 x++; //incrementing x by 1
@@ -93,9 +94,9 @@ namespace ConsoleApp1
 
             }
 
-            string[] strarcars = {"audi","Bugatti","BMW","Mercedes","Ford"}; //array of car names
+            string[] strarcars = { "audi", "Bugatti", "BMW", "Mercedes", "Ford" }; //array of car names
             strarcars[0] = "Tesla"; //changing the first element of the array to "Tesla"
-            for (int j=0;j<strarcars.Length;j++) //iterating through the array of car names
+            for (int j = 0; j < strarcars.Length; j++) //iterating through the array of car names
             {
                 Console.WriteLine(strarcars[j]); //printing each car name from the array but it will print tesla instead of audi
             }
@@ -107,30 +108,30 @@ namespace ConsoleApp1
             int[] intvalue = { 1, 2, 3, 4, 5 }; //array of integer values 
             //it goes something like this: 0th index has 1, 1st index has 2, 2nd index has 3, 3rd index has 4, and 4th index has 5
             //total 5 elements in the array
-            for (int k=0;k<5;k++)  //so in array of 5 elements, the index starts from 0 and goes to 4
+            for (int k = 0; k < 5; k++)  //so in array of 5 elements, the index starts from 0 and goes to 4
             {
                 Console.WriteLine(intvalue[k]); //printing each car name from the array
             }
 
             string[] stkar = new string[9];
-          
-            stkar= new string[] { "BMW", "Ford", "Mazda", "BMW", "Ford", "Mazda" };
-           // stkar[0] =  "volvo" ;
+
+            stkar = new string[] { "BMW", "Ford", "Mazda", "BMW", "Ford", "Mazda" };
+            // stkar[0] =  "volvo" ;
             ;//reassigning the array to a new array of car names
-           for (int a=0;a<stkar.Length;a++)
+            for (int a = 0; a < stkar.Length; a++)
             {
-                 Console.WriteLine(stkar[a]); //printing each car name from the new array
+                Console.WriteLine(stkar[a]); //printing each car name from the new array
             }
 
 
             double[] jk = { 1.4318863, 12, 45, 23.4564, 56, 28.3, 4689.8653 };
             Array.Sort(jk);  //in case of int array or any numeric array it will sort in ascending order
-            for (int b=0;b<jk.Length;b++)  //indeices are always integers!never any other type !!
+            for (int b = 0; b < jk.Length; b++)  //indeices are always integers!never any other type !!
             {
                 Console.WriteLine(jk[b]); //printing each integer value from the sorted array
             }
 
-            String[] starlight = {"Light","Star","Clouds","Moon","Sun","Sky","Earth","Mars","Venus"};
+            String[] starlight = { "Light", "Star", "Clouds", "Moon", "Sun", "Sky", "Earth", "Mars", "Venus" };
             Array.Sort(starlight); //sorting the string array in alphabetical order
             for (int b = 0; b < starlight.Length; b++)  //indeices are always integers!never any other type !!
             {
@@ -139,37 +140,95 @@ namespace ConsoleApp1
 
             int[,,] arr = {
                 { //this is the 0th depth of the 3d array  the entire 1 bracket has 3- {},{},{} within it !
-                    { 1, 12, 36 },      
-                    { 4, 51, 6 },      
-                    { 4, 45, 34 } 
+                    { 1, 12, 36 },
+                    { 4, 51, 6 },
+                    { 4, 45, 34 }
                 },
                 {//this is the 1st depth of the 3d array  the entire 1 bracket has 3- {},{},{} within it !
                     { 7, 8, 9 },
-                    { 10, 11, 12 },      
+                    { 10, 11, 12 },
                     { 13, 14, 15 }
                 }//line this we form 3d array
 
 
             };
-            Console.WriteLine(arr[1,2,1]);
-            for(int row=0;row<arr.GetLength(0);row++)
+            Console.WriteLine(arr[1, 2, 1]);
+            for (int row = 0; row < arr.GetLength(0); row++)
             {
-                for (int clm=0;clm<arr.GetLength(1);clm++)
+                for (int clm = 0; clm < arr.GetLength(1); clm++)
                 {
 
-                    for(int wid=0;wid<arr.GetLength(2);wid++)
+                    for (int wid = 0; wid < arr.GetLength(2); wid++)
                     {
                         Console.WriteLine(arr[row, clm, wid]);
                     }
-                    
+
                 }
 
 
             }
 
 
+            string[] lyrics = { "Twinkle", "twinkle", "little", "star", "How", "I", "wonder", "what", "you", "are" };
+            foreach (string word in lyrics) //foreach loop to iterate through the array of lyrics
+            {
+                Console.Write(word+" "); //printing each word from the array of lyrics
+            }
+            Console.WriteLine();//why this line is needed? because we want to print the next output in a new line
+            int n=10,m=20, l=30; //declaring and initializing three integer variables   
+            finddayungest(r:m, t: l, o: n); //calling the method to find the youngest child with named arguments
+            IwillPrint(); //calling the method without any argument, it will use the default value "Noreway"
+
+            //Method overloading example
+            int myNum1 = PlusMethod(8, 5);
+            double myNum2 = PlusMethod(4.3, 6.26);
+            Console.WriteLine("Int: " + myNum1);
+            Console.WriteLine("Double: " + myNum2);
+
+
+
+
+
+
+
+
 
 
         }
+        static void IwillPrint(string stcharter = "Noreway") //method with a default parameter value
+        {
+            Console.WriteLine(stcharter); //printing the string passed to the method
+                                          //return stcharter;                 //return stcharter; //returning the string
+        }
+           static void finddayungest(int r, int t, int o) //method to find the youngest child
+        {
+            if (r < t && r <o)
+            {
+                Console.WriteLine("Child 1 is the youngest.");
+            }
+            else if (t < r && t < o)
+            {
+                Console.WriteLine("Child 2 is the youngest.");
+            }
+            else
+            {
+                Console.WriteLine("Child 3 is the youngest.");
+            }
+
+        
+        }
+        //method overloading example
+        static int PlusMethod(int x, int y)
+        {
+            return x + y;
+        }
+
+        static double PlusMethod(double x, double y)
+        {
+            return x + y;
+        }
+
+
+
     }
 }
