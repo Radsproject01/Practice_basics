@@ -215,6 +215,35 @@ Operator	Name	Description	                                          Example
 
 
 
+
+
+##List of C# Miscellaneous Operators:
+-> There are few other important operators including sizeof and ? : supported by C#.
+
+Operator	Description	                                     Example
+sizeof()	Returns the size of a data type.	             sizeof(int), returns 4.
+typeof()	Returns the type of a class.	                     typeof(StreamReader);
+&	        Returns the address of an variable.	             &a; returns actual address of the variable.
+*	        Pointer to a variable.	                             *a; creates pointer named 'a' to a variable.
+? :	        Conditional Expression	                             If Condition is true ? Then value X : Otherwise value Y
+is	        Determines whether an object is of a certain type.   If( Ford is Car) // checks if Ford is an object of the Car class.
+as	        Cast without raising an exception if the cast fails. Object obj = new StringReader("Hello");
+
+-> Null-Coalescing Operator (??):The null-coalescing operator (??) is very useful while dealing with variables having null values. This operator simply assigns a default value if the variable is null.
+-> Null-Coalescing Assignment (??=):The ??= operator assigns a value only if the variable is null.
+-> Type Checking Operator (is) : The is operator checks if an object is of a certain type.
+-> Safe Type Casting (as):The as operator performs type casting safely without throwing exceptions.
+
+----> You should use ?: for concise conditional expressions.
+You should use ?? and ??= to handle null values safely.
+You should use is and as for runtime type checking and safe type casting.
+You must avoid using sizeof with reference types.
+You should use parentheses in ternary expressions for better clarity.
+
+
+->Operator precedence determines the grouping of terms in an expression. This affects evaluation of an expression. Certain operators have higher precedence than others; for example, the multiplication operator has higher precedence than the addition operator.
+
+
 # Class Methods:
   ### Math class:
 
@@ -653,4 +682,24 @@ Note that when you are working with multiple parameters, the method call must ha
 int MyMethod(int x)
 float MyMethod(float x)
 double MyMethod(double x, double y)
+
+
+#C# Nullable Types:
+-> C# provides a special data types, the nullable types, to which you can assign normal range of values as well as null values.
+-> syntax to declare  : < data_type> ? <variable_name> = null; eg: string? xmark = null;
+-> int? num1 = null; int? num2 = 45;  double? num3 = new double?();  double? num4 = 3.14157;
+
+
+
+***********AN INTRESTING THIS I CAME ACROSS! 
+YOU CAN ADD PALCE HOLDERS WHILE PRINTING ALL AT ONCE RATHER THAN PRINTING INDIVIDUALLY !
+TRY THIS : Console.WriteLine("Value1: {0}, Value2: {1}, Value3: {2}", num1, num2, num3);
+INSTEAD OF :Console.WriteLine("Value1: " + num1 + ", Value2: " + num2 + ", Value3: " + num3);
+HMMMM....THIS IS INTRESTING!!!*************************8
+
+
+
+
+
+
 

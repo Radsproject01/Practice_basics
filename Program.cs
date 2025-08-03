@@ -12,7 +12,7 @@ namespace ConsoleApp1
     {
 
         static void Main(string[] args)
-        {  //this is a comment
+        {  /*//this is a comment
             int x = 20;         //variable of int type declared and given value 20
             int y = 30;
             int z = x + y; //adding two variables and storing the result in a third variable
@@ -230,5 +230,28 @@ namespace ConsoleApp1
 
 
 
+    }*/
+
+            //for (; ; )
+            //{
+              //  Console.WriteLine("Hey! I am Trapped");
+            //}//this is infinite loop.
+
+
+
+                int? a = 5, b = 3,e=null, c = null;   // Binary: a = 0101, b = 0011
+            Console.WriteLine($"Size of int:" + sizeof(int));//tells the sixe of the variable in bytes .
+
+            c = (a > 3 & b > 2) ? a + b : a - b; //using ternary operator to check the condition and assign value to c
+            Console.WriteLine($"Value of c: {c}" ); //output the value of c
+
+            int d = e ?? 800; //using null-coalescing operator to assign value to d if c is null
+            Console.WriteLine($"Value of c: {d}");
+          /*  string mynull = null;
+            mynull ??= "Default Value"; //using null-coalescing assignment operator to assign value to mynull if it is null
+            console.WriteLine($"Value of mynull:" + mynull); //output the value of mynull
+        not available in 7.3 version but works!!*/
+            }
     }
+
 }
