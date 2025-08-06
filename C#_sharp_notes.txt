@@ -610,7 +610,11 @@ for(int row=0;row<arr.GetLength(0);row++)
 }
 Note: Also note that we have to use GetLength() instead of Length to specify how many times the loop should run.
 
-
+->You can sort an array in descending order by using the Array.Sort() followed by Array.Reverse(). 
+  example: string [] Planets = {"Pluto","Mars" , "Earth","Jupiter","Ex-200"};
+           Array.Sort(Planets); Array.Reverse(Planets);
+->You can sort an array in ascending order by using the Array.Sort().Fort strings/chars it is Alphabetically and numberts it is ascending. Always!
+->You can copy an array to another array using the Array.Copy() or Array.Clone() method.
 
 
 # Methods :             
@@ -698,8 +702,78 @@ INSTEAD OF :Console.WriteLine("Value1: " + num1 + ", Value2: " + num2 + ", Value
 HMMMM....THIS IS INTRESTING!!!*************************8
 
 
+#Null Coalescing operator ??:
+-> The null coalescing operator ?? in C# is a shorthand way to provide a fallback value when something is null.
+-> syntax: var result = value ?? fallbackValue;
+-> meaning : @  If value is not null, result gets value. @If value is null, result gets fallbackValue.
+-> sooo basically it is like shortcut for checking if value is null or not , if not null then good but if is null then it will assign result=fallbackValue;
+
+*********Array in itself is a vast topic here and it is also important , so let's dive in deep!************
+
+#ARRAY CLASS: In C#, the Array class provides a variety of methods and properties for creating, manipulating, searching, and sorting arrays.
+
+-> The following table describes some of the most commonly used properties of C# Array class:
+
+Sr.No.	Property & description
+1	IsFixedSize : Gets a value indicating whether the Array has a fixed size.
+
+2	IsReadOnly :  Gets a value indicating whether the Array is read-only.
+
+3	Length   : Gets a 32-bit integer that represents the total number of elements in all the dimensions of the Array.
+
+4       LongLength : Gets a 64-bit integer that represents the total number of elements in all the dimensions of the Array.
+
+5	Rank : Gets the rank (number of dimensions) of the Array.
 
 
+->The following table describes some of the most commonly used methods of the Array class −
 
+Sr.No.	Methods & Description
+1	AsReadOnly<T>(): It returns a read-only wrapper for the specified array.
 
+2	BinarySearch() : It searches a sorted array for a value.Array.BinarySearch() only works correctly on sorted arrays in ascending order.
+
+3	Clear() : It sets a range of elements in the Array to zero, to false, or to null, depending on the element type.
+
+4	Clone() : It creates a shallow copy of the array.
+
+5	ConstrainedCopy() : It copies a range of elements from one array to another.
+
+6	ConvertAll<TInput,TOutput>() :It converts an array of one type to another type using a specified converter
+
+7	CopyTo() :It copies all elements of the array to another array, starting at a specified index.
+
+8	Copy() :It copies a range of elements in one array to another and performs typecasting and boxing.
+
+9	CreateInstance() : It creates an array of a specified type and dimension lengths.
+
+10	Empty<T>() : It returns an empty array of type T.
+
+11	Exists<T>() : It determines whether the array contains elements.
+
+12	Fill<T>() : It fills the entire array with the specified value.
+
+13	FindIndex<T>() : It returns an index defined by the specified predicate.
+
+14	Find<T>() : It searches for an element that matches the conditions.
+
+15	ForEach<T>() : It performs the specified action on each element of the array.
+
+16	GetLength() :It gets a 32-bit integer that represents the number of elements in the specified dimension of the   array
+
+17	GetUpperBound(): It gets the index of the last element of the specified dimension in the array.
+
+18	IndexOf(): It searches for a specified element in the array and returns its index.
+
+19	LastIndexOf() : It return the index of the last occurrence of specified element.
+
+20	Resize<T>() :It changes the size of a one-dimensional array to a specified size.
+
+21	Reverse() : It reverses the sequence of elements in the entire array or a subset of it.
+
+22	SetValue() : It sets a value to a specific element in an array at a given position.
+
+23	Sort() : It sorts the element in the array.
+
+24	TrueForAll<T>() : It checks whether all elements in array match the condition.
 

@@ -234,24 +234,108 @@ namespace ConsoleApp1
 
             //for (; ; )
             //{
-              //  Console.WriteLine("Hey! I am Trapped");
+            //  Console.WriteLine("Hey! I am Trapped");
             //}//this is infinite loop.
 
 
 
-                int? a = 5, b = 3,e=null, c = null;   // Binary: a = 0101, b = 0011
-            Console.WriteLine($"Size of int:" + sizeof(int));//tells the sixe of the variable in bytes .
+            /* int? a = 5, b = 3,e=null, c = null;   // Binary: a = 0101, b = 0011
+         Console.WriteLine($"Size of int:" + sizeof(int));//tells the sixe of the variable in bytes .
 
-            c = (a > 3 & b > 2) ? a + b : a - b; //using ternary operator to check the condition and assign value to c
-            Console.WriteLine($"Value of c: {c}" ); //output the value of c
+         c = (a > 3 & b > 2) ? a + b : a - b; //using ternary operator to check the condition and assign value to c
+         Console.WriteLine($"Value of c: {c}" ); //output the value of c
 
-            int d = e ?? 800; //using null-coalescing operator to assign value to d if c is null
-            Console.WriteLine($"Value of c: {d}");
-          /*  string mynull = null;
-            mynull ??= "Default Value"; //using null-coalescing assignment operator to assign value to mynull if it is null
-            console.WriteLine($"Value of mynull:" + mynull); //output the value of mynull
-        not available in 7.3 version but works!!*/
+         int d = e ?? 800; //using null-coalescing operator to assign value to d if c is null
+         Console.WriteLine($"Value of c: {d}");*/
+            /*  string mynull = null;
+              mynull ??= "Default Value"; //using null-coalescing assignment operator to assign value to mynull if it is null
+              console.WriteLine($"Value of mynull:" + mynull); //output the value of mynull
+          not available in 7.3 version but works!!*/
+
+            //replace this long ass typing   :
+            /*int? numb1 = null;
+            int numb2 = 56, numb3;
+            if (numb1!= null) { numb3= (int)numb1; //if numb1 is not null, assign its value to numb3
             }
+            else
+            {
+                numb3 = 78; //if numb1 is null, assign 78 to numb3
+            }
+            //replace with  :
+            
+            numb3 = numb1 ?? 78;
+            Console.WriteLine($"Value of numb3: {numb3}"); //output the value of numb3= 78, because numb1 is null and we are using null-coalescing operator to assign value to numb3 if numb1 is null
+
+
+            List<int> intslist = new List<int>();
+            intslist.Add(34);
+            intslist.Add(46);
+            intslist.Add(345);
+            foreach(int i in intslist) {Console.WriteLine(i);}
+            intslist.Add(434);*/
+            //now this is just another form of array
+            //why this? because it is more dynamic and editable!
+            /*int a normal arrary you fix the index size , but what if you caome across a case
+             where you don't know how much data will be input or any other way you are told
+            that you gotta make it dynamic ! So , to make the code more feasable your best 
+            option to go is go with list!
+            list can also be delacred for ojescts of the class!
+             */
+
+
+
+
+            string[] Planets= { "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune" };
+            string[] CopyPlanets = new string[Planets.Length];
+            // Array.Clear(Planets,0,4); // 0: from the index 0th  to 4th index will be cleared
+            //Array.AsReadOnly(Planets); //this will return a read-only array of planets, so you cannot modify the original array
+            // Array.Sort(Planets); //sorting the array of planets in alphabetical order
+            //Console.WriteLine(Array.BinarySearch(Planets, "Neptune"));
+            //Array.BinarySearch() only works correctly on sorted arrays in ascending order.
+            // this will return the index of "Neptune" in the array of planets, if it exists, otherwise it will return a negative number
+            //foreach (string p in Planets)
+            //{
+            //  Console.WriteLine("\n"+ p);
+            //printing each planet from the copied array
+
+
+            //}
+
+            var clone = (string[])Planets.Clone();//cloning the array of planets to another array
+            Console.WriteLine(string.Join(", ", clone));
+            int[] lengths = Array.ConvertAll(Planets, p => p?.Length ?? 0);//converting the array of planets to an array of their lengths
+            Console.WriteLine(string.Join(", ", lengths)); //printing the lengths of each planet name
+            // Array.ConstrainedCopy(Planets, 2, CopyPlanets,0, Planets.Length-3); //copying the array of planets to another array using Array.Copy method
+            // Array.Sort(CopyPlanets); //sorting the copied array of planets in alphabetical order
+            //Array.Reverse(CopyPlanets); //reversing the sorted array of planets to get them in reverse alphabetical order
+            //cloning the array of planets to another array
+
+            //foreach (string pl in CopyPlanets)
+            //{
+            //  Console.WriteLine(pl); //printing each planet from the copied array
+            //}
+
+
+
+            // all is good but what if we want to take input from the user for the array?
+            /*   string[] FavAnime = new string[5]; //declaring an array of strings with size 5
+               Console.WriteLine("Enter your favorite anime names (5 in total):");
+               for (int i=0;i<FavAnime.Length;i++)
+               {
+
+                   Console.Write($"Anime {i + 1}: "); //prompting the user to enter the anime name
+                   FavAnime[i] = Console.ReadLine(); //reading the input from the user and storing it in the array 
+               }
+            //for reading and displying the input from the user better to use separate loops
+               for (int i = 0; i < FavAnime.Length; i++)
+               {
+
+                   Console.WriteLine($"Anime you input :" + FavAnime[i]); //prompting the user to enter the anime name
+                   //reading the input from the user and storing it in the array 
+               }*/
+
+
+        }
     }
 
 }
